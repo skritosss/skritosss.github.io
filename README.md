@@ -9,6 +9,7 @@ Live site: <https://skritosss.github.io>
 - selected public work;
 - product and startup track record;
 - technical toolbox;
+- OCR and data workflow case studies;
 - working principles.
 
 ## Status
