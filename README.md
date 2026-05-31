@@ -1,6 +1,6 @@
 # Aleksandr Shuvalov Portfolio
 
-Personal portfolio site for selected work in AI products, data workflows, automation, and product research.
+Personal portfolio site for selected work in AI products, data workflows, automation, product research, market research, and startup execution.
 
 Live site: <https://skritosss.github.io>
 
