@@ -1,4 +1,4 @@
-# Aleksandr Shuvalov Portfolio
+# Alex Shuvalov Portfolio
 
 Personal portfolio site for selected work in AI products, data workflows, automation, product research, market research, and startup execution.
 
