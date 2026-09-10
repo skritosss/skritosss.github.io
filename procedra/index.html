@@ -1,0 +1,174 @@
+<title>Procedra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --ground:#F6F4F4; --surface:#FFFFFF; --ink:#1A1416; --muted:#6B5B60;
+  --accent:#8E1F2F; --accent-soft:#F3E7E9; --line:#E3D9DB;
+  --shadow:0 1px 2px rgba(26,20,22,.05),0 10px 30px rgba(26,20,22,.07);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#120E10; --surface:#1B1518; --ink:#EDE6E8; --muted:#A29096;
+    --accent:#D97186; --accent-soft:#2C1A20; --line:#2E2428;
+    --shadow:0 1px 2px rgba(0,0,0,.5),0 10px 30px rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#120E10; --surface:#1B1518; --ink:#EDE6E8; --muted:#A29096;
+  --accent:#D97186; --accent-soft:#2C1A20; --line:#2E2428;
+  --shadow:0 1px 2px rgba(0,0,0,.5),0 10px 30px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box}
+body{
+  background:var(--ground); color:var(--ink);
+  font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1120px; margin:0 auto; padding:64px 24px 96px; display:flex; flex-direction:column; gap:64px}
+header{display:flex; flex-direction:column; gap:22px; border-bottom:1px solid var(--line); padding-bottom:40px}
+.eyebrow{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); margin:0}
+h1{font-size:clamp(32px,5.5vw,48px); line-height:1.08; font-weight:700; letter-spacing:-.025em; margin:0; text-wrap:balance}
+.lede{font-size:18px; color:var(--muted); max-width:64ch; margin:0}
+.meta{display:flex; flex-wrap:wrap; gap:10px}
+.chip{
+  font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:12.5px;
+  background:var(--surface); border:1px solid var(--line); border-radius:3px;
+  padding:6px 11px; color:var(--muted); font-variant-numeric:tabular-nums;
+}
+.chip b{color:var(--ink); font-weight:500}
+.links{display:flex; flex-wrap:wrap; gap:20px; font-size:15px}
+.links a{color:var(--accent); text-decoration:none; border-bottom:1px solid transparent; padding-bottom:1px}
+.links a:hover{border-bottom-color:var(--accent)}
+a:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
+.shot{display:flex; flex-direction:column; gap:20px}
+.shot-head{display:flex; flex-direction:column; gap:8px; max-width:72ch}
+.num{
+  font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:12px; color:var(--accent);
+  margin:0; letter-spacing:.1em;
+}
+.shot-head h2{font-size:22px; font-weight:600; letter-spacing:-.01em; margin:0}
+.desc{margin:0; color:var(--muted); font-size:15.5px}
+.frame{
+  margin:0; background:var(--surface); border:1px solid var(--line); border-radius:10px;
+  box-shadow:var(--shadow); overflow:hidden;
+}
+.frame img{display:block; width:100%; height:auto}
+footer{border-top:1px solid var(--line); padding-top:32px; color:var(--muted); font-size:14.5px; display:flex; flex-direction:column; gap:8px}
+footer a{color:var(--accent)}
+@media (max-width:640px){ .wrap{padding:40px 16px 64px; gap:44px} }
+</style>
+
+<div class="wrap">
+<header>
+  <p class="eyebrow">Собственный проект · спроектирован и написан один</p>
+  <h1>Procedra</h1>
+  <p class="lede">Сервис собирает черновики рабочих инструкций из запроса, корпоративных документов, публичных стандартов и видео — и не выпускает их в работу без утверждения профильным специалистом. Ниже восемь экранов работающего приложения: что оператор вводит, что система возвращает и как документ проходит согласование.</p>
+  <div class="meta">
+    <span class="chip">Тестов <b>406</b></span>
+    <span class="chip">Ролей <b>6</b></span>
+    <span class="chip">FastAPI · Pydantic</span>
+    <span class="chip">strict mypy · Ruff · CI</span>
+    <span class="chip">Docker Compose</span>
+    <span class="chip">SSRN <b>7026918</b></span>
+  </div>
+  <div class="links">
+    <a href="https://github.com/skritosss/procedra-industrial-ai">Исходный код на GitHub</a>
+    <a href="https://skritosss.github.io">Портфолио</a>
+  </div>
+</header>
+
+  <section class="shot">
+    <div class="shot-head">
+      <p class="num">01</p>
+      <h2>Генератор</h2>
+      <p class="desc">Слева — постановка задачи: тип инструкции, уровень оператора, отраслевой профиль, участок, оборудование, технический контекст. Справа — готовый черновик со статусом жизненного цикла: черновик, на проверке, утверждено. Метки над документом говорят прямо, что это AI-черновик и каким режимом он собран.</p>
+    </div>
+    <figure class="frame">
+      <img src="01-generator.jpg" alt="Procedra — Генератор" loading="lazy">
+    </figure>
+  </section>
+
+  <section class="shot">
+    <div class="shot-head">
+      <p class="num">02</p>
+      <h2>Происхождение утверждений</h2>
+      <p class="desc">Каждое утверждение в документе имеет идентификатор и статус источника: retrieved_unverified, user_claim, unverified — и ссылку на то, откуда оно пришло. Это тот самый механизм, ради которого происхождение данных сделано отдельным типом в коде: враждебный или непроверенный контекст не может незаметно стать доверенным.</p>
+    </div>
+    <figure class="frame">
+      <img src="02-proiskhozhdenie.jpg" alt="Procedra — Происхождение утверждений" loading="lazy">
+    </figure>
+  </section>
+
+  <section class="shot">
+    <div class="shot-head">
+      <p class="num">03</p>
+      <h2>Оценка качества</h2>
+      <p class="desc">Балл структуры считается кодом, а не моделью, поэтому воспроизводим. Документ сверяется с приказом Минтруда № 772н, ГОСТ 12.2.003-91, ГОСТ 12.3.002-2014, ГОСТ 3.1105-2011 и постановлением Правительства № 2464. Отдельно перечислено, что обязана проверить экспертиза человека, — система не претендует на техническую верность.</p>
+    </div>
+    <figure class="frame">
+      <img src="03-otsenka.jpg" alt="Procedra — Оценка качества" loading="lazy">
+    </figure>
+  </section>
+
+  <section class="shot">
+    <div class="shot-head">
+      <p class="num">04</p>
+      <h2>Источники</h2>
+      <p class="desc">По каждому источнику видно релевантность, долю влияния на инструкцию, профили применимости, совпавшие термины и прямую ссылку. Отдельной строкой — почему источник вообще был выбран. Проверяющий понимает, что сформировало документ, без раскопок в логах.</p>
+    </div>
+    <figure class="frame">
+      <img src="04-istochniki.jpg" alt="Procedra — Источники" loading="lazy">
+    </figure>
+  </section>
+
+  <section class="shot">
+    <div class="shot-head">
+      <p class="num">05</p>
+      <h2>Операторский чек-лист</h2>
+      <p class="desc">Инструкция разворачивается в пошаговый чек-лист для пробного прохода: ожидаемый результат и требование безопасности на каждом шаге. Есть режим цеха с крупными элементами — под планшет у станка, а не под чтение с монитора.</p>
+    </div>
+    <figure class="frame">
+      <img src="05-cheklist.jpg" alt="Procedra — Операторский чек-лист" loading="lazy">
+    </figure>
+  </section>
+
+  <section class="shot">
+    <div class="shot-head">
+      <p class="num">06</p>
+      <h2>Редактор</h2>
+      <p class="desc">Специалист правит документ по полям — назначение, область применения, СИЗ, шаги, — а не переписывает текст целиком. После правок можно заново прогнать проверку качества.</p>
+    </div>
+    <figure class="frame">
+      <img src="06-redaktor.jpg" alt="Procedra — Редактор" loading="lazy">
+    </figure>
+  </section>
+
+  <section class="shot">
+    <div class="shot-head">
+      <p class="num">07</p>
+      <h2>История и согласование</h2>
+      <p class="desc">Сводка пробных прогонов и процент выполненных шагов, сохранённые версии с баллом структуры и уровнем риска, действия «На проверку», «Утвердить», «Отклонить» и фиксация того, кто проверял. Маршрут согласования — не декорация: без утверждения человеком документ остаётся черновиком.</p>
+    </div>
+    <figure class="frame">
+      <img src="07-istoriya.jpg" alt="Procedra — История и согласование" loading="lazy">
+    </figure>
+  </section>
+
+  <section class="shot">
+    <div class="shot-head">
+      <p class="num">08</p>
+      <h2>Машиночитаемая выгрузка</h2>
+      <p class="desc">Тот же документ в JSON со строгой схемой: СИЗ, инструменты, требования безопасности, шаги. Рядом выгрузка в Markdown и PDF. Это то, что делает сервис пригодным для встраивания в чужие системы, а не только для чтения человеком.</p>
+    </div>
+    <figure class="frame">
+      <img src="08-json.jpg" alt="Procedra — Машиночитаемая выгрузка" loading="lazy">
+    </figure>
+  </section>
+
+<footer>
+  <p>Скриншоты сняты с работающего приложения. Документ на них собран детерминированным режимом — тем, который включается, когда внешняя модель недоступна или ответила некорректно.</p>
+  <p>Александр Шувалов · <a href="mailto:shuv.aleksandr@icloud.com">shuv.aleksandr@icloud.com</a> · Telegram @skritosss</p>
+</footer>
+</div>
