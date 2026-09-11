@@ -13,6 +13,7 @@
       <a class="brand" href="/">Alex Shuvalov</a>
       <div>
         <a href="#work">Work</a>
+        <a href="#oss">Open Source</a>
         <a href="#track">Track Record</a>
         <a href="#principles">Principles</a>
         <a href="mailto:shuv.aleksandr@icloud.com">Contact</a>
@@ -45,29 +46,31 @@
           <a href="https://github.com/skritosss/medai-case-study">View repository</a>
         </article>
         <article>
-          <h3>Document AI Lab</h3>
-          <p>OCR, document preprocessing, field extraction, and workflow experiments.</p>
-          <a href="https://github.com/skritosss/document-ai-lab">View repository</a>
-        </article>
-        <article>
           <h3>Engineering Drawing OCR</h3>
-          <p>Limited-code case study for recognizing text on technical drawings with preprocessing and custom recognizer experiments.</p>
+          <p>Limited-code case study for recognizing text on technical drawings: preprocessing, region handling, and a CRNN + CTC recognizer for narrow technical text lines.</p>
           <a href="https://github.com/skritosss/engineering-drawing-ocr">View repository</a>
         </article>
+      </div>
+    </section>
+
+    <section id="oss" class="section">
+      <h2>Open Source</h2>
+      <p>Working on PDF text extraction and vector tooling in libraries I use in production.</p>
+      <div class="grid">
         <article>
-          <h3>Data Workflow Utils</h3>
-          <p>Small utilities for turning messy operational data into reliable structured outputs.</p>
-          <a href="https://github.com/skritosss/data-workflow-utils">View repository</a>
+          <h3>pdfminer.six — ligatures lost as U+0000</h3>
+          <p>Found and reported a class of PDFs where ff, fi and fl are dropped from extracted text. The correct text sits in <code>/ActualText</code> on marked content, which the library ignores. Verified the cause by patching the key in place and watching poppler's output break on exactly the affected lines.</p>
+          <a href="https://github.com/pdfminer/pdfminer.six/issues/1288">View issue</a>
         </article>
         <article>
-          <h3>AI Product Prototypes</h3>
-          <p>Compact prototypes and product notes for AI-assisted workflows.</p>
-          <a href="https://github.com/skritosss/ai-product-prototypes">View repository</a>
+          <h3>pypdf — same defect, measured</h3>
+          <p>Contributed a reproducible analysis: which sources of truth exist in the file, why the font offers no fallback, and a decoding bug in a proposed fix that doubled the corrupted output instead of removing it.</p>
+          <a href="https://github.com/py-pdf/pypdf/issues/1351">View issue</a>
         </article>
         <article>
-          <h3>Startup Research Toolkit</h3>
-          <p>Templates and scoring tools for market research, competitor mapping, and product decisions.</p>
-          <a href="https://github.com/skritosss/startup-research-toolkit">View repository</a>
+          <h3>supabase/vecs — documentation fixes</h3>
+          <p>Two pull requests: a docstring describing an index-build process the code no longer performs, and an install requirement stating a Python version the package rejects.</p>
+          <a href="https://github.com/supabase/vecs/pulls?q=author%3Askritosss">View pull requests</a>
         </article>
       </div>
     </section>
