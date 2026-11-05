@@ -3,131 +3,51 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Alex Shuvalov - AI Product Engineer</title>
-  <meta name="description" content="Portfolio of Alex Shuvalov: AI product engineer working with Python, FastAPI, RAG and retrieval, computer vision, and role-based product workflows.">
+  <title>Alex Shuvalov | AI Product Engineer</title>
+  <meta name="description" content="Alex Shuvalov builds document-intensive AI workflows with structured output, source traceability, and human review. Selected products, engineering work, and open-source contributions.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="hero">
-    <nav>
-      <a class="brand" href="/">Alex Shuvalov</a>
-      <div>
-        <a href="#work">Work</a>
-        <a href="#oss">Open Source</a>
-        <a href="#track">Track Record</a>
-        <a href="#principles">Principles</a>
-        <a href="mailto:shuv.aleksandr@icloud.com">Contact</a>
-      </div>
+  <a class="skip" href="#work">Skip to selected work</a>
+  <header class="intro wrap">
+    <nav aria-label="Main navigation">
+      <a class="brand" href="/">AS / Engineering &amp; Product</a>
+      <div><a href="#work">Work</a><a href="#oss">Open Source</a><a href="#background">Background</a><a href="mailto:shuv.aleksandr@icloud.com">Contact</a></div>
     </nav>
-    <section>
-      <p class="eyebrow">AI Product Engineer · Python · FastAPI · RAG · Computer Vision</p>
-      <h1>I take AI systems from architecture to a working product.</h1>
-      <p class="lead">Retrieval, computer vision, role-based workflows, tests, CI. I came from the product and funding side — ~$76K in non-dilutive funding across 5 projects, listed author on registered MedAI software — which is why I build with provenance, review workflows, and audit trails.</p>
-      <div class="actions">
-        <a href="https://github.com/skritosss/procedra-showcase">Procedra</a>
-        <a href="https://github.com/skritosss">GitHub Profile</a>
-        <a href="https://github.com/skritosss/medai-case-study">MedAI Case Study</a>
-      </div>
-    </section>
+    <p class="eyebrow">AI Product Engineer</p>
+    <h1>Alex Shuvalov</h1>
+    <p class="lead">I build document-intensive AI workflows with structured output, source traceability, and human review.</p>
+    <p class="muted">Hands-on engineering, product research, and grant-backed development.</p>
+    <div class="links"><a href="https://github.com/skritosss">GitHub</a><a href="https://www.linkedin.com/in/alex-shuvalov-4885a9387/">LinkedIn</a><a href="mailto:shuv.aleksandr@icloud.com">Email</a></div>
   </header>
-
   <main>
-    <section id="work" class="section">
-      <h2>Selected Public Work</h2>
-      <div class="grid">
-        <article>
-          <h3>Procedra — Industrial Instruction AI</h3>
-          <p>AI system turning operator requests, enterprise documents, public standards, and video context into review-ready industrial work-instruction drafts under mandatory expert approval. FastAPI, hybrid retrieval, video analysis, 6 roles, versioning, audit trail. Working paper on SSRN, Abstract ID 7026918.</p>
-          <a href="https://github.com/skritosss/procedra-showcase">View repository</a>
-        </article>
-        <article>
-          <h3>MedAI Case Study</h3>
-          <p>Sanitized product and architecture notes based on a private Flutter / FlutterFlow prototype.</p>
-          <a href="https://github.com/skritosss/medai-case-study">View repository</a>
-        </article>
-        <article>
-          <h3>Engineering Drawing OCR</h3>
-          <p>Limited-code case study for recognizing text on technical drawings: preprocessing, region handling, and a CRNN + CTC recognizer for narrow technical text lines.</p>
-          <a href="https://github.com/skritosss/engineering-drawing-ocr">View repository</a>
-        </article>
+    <section id="work" class="section wrap">
+      <div class="section-title"><h2>Selected Work</h2><span>01 / Products &amp; experiments</span></div>
+      <div class="project-heading"><div><p class="eyebrow">Featured / Industrial AI</p><h3>Procedra</h3></div><a href="procedra/">Explore the interface &rarr;</a></div>
+      <p class="project-lead">From an operational request and reference documents to a structured instruction draft that an expert can review.</p>
+      <figure class="product-shot"><a href="procedra/"><img src="procedra/01-generator.jpg" width="1456" height="839" alt="Procedra application showing task input alongside a generated instruction draft" fetchpriority="high"></a><figcaption>Actual application, synthetic demo content. Screens show the Russian-language interface and deterministic generation mode.</figcaption></figure>
+      <div class="project-detail"><p>I designed and developed the workflow end to end: document retrieval, structured output, source context, editing, review, version history, and execution checklists.</p><p>A controlled demonstration prototype, not a production deployment. Generated instructions require qualified expert review. Application source remains private.</p></div>
+      <p class="stack">Python / FastAPI / Pydantic / SQL / Retrieval / Evaluation</p>
+      <div class="links"><a href="https://github.com/skritosss/procedra-showcase">Product case study</a><a href="https://github.com/skritosss/skritosss/blob/main/assets/procedra-deck/procedra-deck-en.pdf">Presentation</a><a href="https://ssrn.com/abstract=7026918">Working paper</a></div>
+      <div class="project-list">
+        <article><p class="eyebrow">Healthtech / Product development</p><h3>MedAI</h3><p>Co-founder experience across product architecture, analytics, partner communication, and grant work. Listed as an author of the registered software.</p><a href="https://github.com/skritosss/medai-case-study">Read the case study &rarr;</a></article>
+        <article><p class="eyebrow">Document AI / Computer vision</p><h3>Engineering Drawing OCR</h3><p>Contributed preprocessing and recognition experiments to a larger technical-drawing project. Public reference code includes a runnable synthetic preprocessing demo and tests.</p><a href="https://github.com/skritosss/engineering-drawing-ocr">Explore the code &rarr;</a></article>
       </div>
     </section>
-
-    <section id="oss" class="section">
-      <h2>Open Source</h2>
-      <p>Working on PDF text extraction and vector tooling in libraries I use in production.</p>
-      <div class="grid">
-        <article>
-          <h3>pdfminer.six — ligatures lost as U+0000</h3>
-          <p>Found and reported a class of PDFs where ff, fi and fl are dropped from extracted text. The correct text sits in <code>/ActualText</code> on marked content, which the library ignores. Verified the cause by patching the key in place and watching poppler's output break on exactly the affected lines.</p>
-          <a href="https://github.com/pdfminer/pdfminer.six/issues/1288">View issue</a>
-        </article>
-        <article>
-          <h3>pypdf — same defect, measured</h3>
-          <p>Contributed a reproducible analysis: which sources of truth exist in the file, why the font offers no fallback, and a decoding bug in a proposed fix that doubled the corrupted output instead of removing it.</p>
-          <a href="https://github.com/py-pdf/pypdf/issues/1351">View issue</a>
-        </article>
-        <article>
-          <h3>supabase/vecs — documentation fixes</h3>
-          <p>Two pull requests: a docstring describing an index-build process the code no longer performs, and an install requirement stating a Python version the package rejects.</p>
-          <a href="https://github.com/supabase/vecs/pulls?q=author%3Askritosss">View pull requests</a>
-        </article>
-      </div>
-    </section>
-
-    <section id="track" class="section split">
-      <div>
-        <h2>Track Record</h2>
-        <p>Product ownership and hands-on engineering, in medtech, industrial AI, and early-stage digital products.</p>
-      </div>
-      <ul>
-        <li>Took an AI decision-support tool for pediatric immunosuppressive therapy from concept to registered software in 18 months; listed as an author on the state registration certificate (MedAI).</li>
-        <li>Secured ~$76K in non-dilutive funding across 5 early-stage digital products in medtech, edtech, tourism, social impact, and consumer technology.</li>
-        <li>Owned market research, competitor mapping, and market sizing that teams used to decide what to launch and what to cut from MVP scope.</li>
-        <li>Finalist, &quot;Startup as a Thesis&quot; (SUSU) 2025 · Finalist, MSU Startup Accelerator 2024.</li>
-        <li>MSc in Computer Science and Engineering, South Ural State University — &quot;Digital Ural&quot; elite IT program.</li>
-      </ul>
-    </section>
-
-    <section class="section">
-      <h2>Toolbox</h2>
-      <div class="chips">
-        <span>Python</span>
-        <span>FastAPI</span>
-        <span>Pydantic</span>
-        <span>SQL</span>
-        <span>JavaScript / TypeScript</span>
-        <span>Docker</span>
-        <span>GitHub Actions</span>
-        <span>pytest</span>
-        <span>mypy</span>
-        <span>Ruff</span>
-        <span>SQLite</span>
-        <span>REST APIs</span>
-        <span>RAG &amp; Hybrid Retrieval</span>
-        <span>LLM Integration</span>
-        <span>Structured Output</span>
-        <span>Computer Vision</span>
-        <span>Product Discovery</span>
-        <span>PRDs &amp; MVP Scoping</span>
-        <span>Market Research</span>
-        <span>Figma</span>
-        <span>FlutterFlow</span>
-      </div>
-    </section>
-
-    <section id="principles" class="section split">
-      <div>
-        <h2>How I Work</h2>
-        <p>I care about clear product context, simple architecture, fast validation, and tools that survive real operational use.</p>
-      </div>
-      <ul>
-        <li>Make uncertainty visible.</li>
-        <li>Build working artifacts, not only documents.</li>
-        <li>Keep sensitive product logic private when needed.</li>
-        <li>Use data and feedback to improve the next iteration.</li>
-      </ul>
+    <section id="oss" class="section band"><div class="wrap">
+      <div class="section-title"><h2>Open Source</h2><span>02 / Accepted contributions</span></div>
+      <div class="contribution"><h3>Mellea</h3><p>Hardened release-dispatch input validation and literal payload handling.</p><a href="https://github.com/generative-computing/mellea/pull/1731">Merged pull request &rarr;</a></div>
+      <div class="contribution"><h3>Backlot</h3><p>Improved HubSpot object-type compatibility, GitHub pagination, and API version-header handling.</p><a href="https://github.com/brekkylab/backlot/pull/848">Merged pull request &rarr;</a></div>
+      <div class="contribution"><h3>Agent Swarm</h3><p>Corrected environment-flag parsing for integrations and provider configuration.</p><a href="https://github.com/desplega-ai/agent-swarm/pull/2096">Merged pull request &rarr;</a></div>
+      <div class="contribution"><h3>Autosubmit</h3><p>Documented YAML configuration loading and override order.</p><a href="https://github.com/BSC-ES/autosubmit/pull/3354">Merged pull request &rarr;</a></div>
+      <p class="oss-footer"><a href="https://github.com/pulls?q=is%3Apr+author%3Askritosss+is%3Amerged">Browse accepted contributions &rarr;</a></p>
+    </div></section>
+    <section id="background" class="section wrap">
+      <div class="section-title"><h2>Background</h2><span>03 / Product thinking, engineering execution</span></div>
+      <div class="project-detail"><p>Experience across healthtech, industrial AI, and early-stage digital products: market research, competitor analysis, MVP definition, partnerships, and grant applications.</p><p>Currently pursuing a master's in Computer Science and Engineering through the Digital Ural program, following a bachelor's in Architecture and Civil Engineering.</p></div>
+      <dl class="practice"><div><dt>Engineering</dt><dd>Python, FastAPI, Pydantic, SQL, JavaScript / TypeScript, Docker, REST APIs</dd></div><div><dt>Applied AI</dt><dd>Retrieval, LLM integration, structured output, OCR, evaluation</dd></div><div><dt>Quality</dt><dd>pytest, mypy, Ruff, GitHub Actions, validation, audit trails</dd></div><div><dt>Product &amp; research</dt><dd>Discovery, competitor research, MVP scoping, grant-backed execution</dd></div></dl>
     </section>
   </main>
+  <footer class="wrap"><strong>Alex Shuvalov</strong><a href="mailto:shuv.aleksandr@icloud.com">shuv.aleksandr@icloud.com</a><a href="https://github.com/skritosss">GitHub</a></footer>
 </body>
 </html>

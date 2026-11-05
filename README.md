@@ -7,10 +7,11 @@ Live site: <https://skritosss.github.io>
 ## Sections
 
 - selected public work;
-- product and startup track record;
-- technical toolbox;
-- OCR and data workflow case studies;
-- working principles.
+- actual Procedra application screens and an English product walkthrough;
+- MedAI product-development case study;
+- OCR reference code and a synthetic preprocessing demo;
+- accepted open-source contributions;
+- background and engineering practices.
 
 ## Status
 
